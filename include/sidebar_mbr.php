@@ -29,42 +29,18 @@
                     </a>
                 </li>
 
-                <!-- Pengajuan Berkas -->
+                <!-- info tentang dprd -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link" data-page="data_master">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Manajemen Anggota
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
+                    <a href="jadwal_anggota.php" class="nav-link" data-page="survey.php">
+                        <i class="nav-icon fas fa-comments"></i>
+                        <p>Jadwal Rapat </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="br_absensi_rapat.php" class="nav-link" data-page="br_absensi_rapat.php">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Absesi Rapat </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="status_kehadiran.php" class="nav-link" data-page="status_kehadiran.php">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Status Kehadiran</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="dokumen_rapat.php" class="nav-link" data-page="dokumen_rapat.php">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p> Dokumen Rapat</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
-                <!-- Survey -->
                 <li class="nav-item">
-                    <a href="survey.php" class="nav-link" data-page="survey.php">
+                    <a href="info.php" class="nav-link" data-page="survey.php">
                         <i class="nav-icon fas fa-comments"></i>
-                        <p>Tautan untuk Aksi Lainnya</p>
+                        <p>Informasi Terbaru </p>
                     </a>
                 </li>
 

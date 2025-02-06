@@ -130,9 +130,9 @@
 
                 <!-- Ulasan -->
                 <li class="nav-item">
-                    <a href="notifikasi.php" class="nav-link">
+                    <a href="informasi_terbaru.php" class="nav-link">
                         <i class="nav-icon fas fa-comments"></i>
-                        <p>Notifikasi</p>
+                        <p>Informasi Terbaru</p>
                     </a>
                 </li>
 

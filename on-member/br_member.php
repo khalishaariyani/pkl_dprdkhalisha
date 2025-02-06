@@ -84,12 +84,12 @@ mysqli_close($koneksi);
                                     <div class="small-box bg-info">
                                         <div class="inner">
                                             <h3></h3>
-                                            <p> JADWAL RAPAT DAN KEGIATAN DPRD KOTA BANJARMASIN </p>
+                                            <p> JADWAL RAPAT DPRD KOTA BANJARMASIN </p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-bag"></i>
                                         </div>
-                                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="jadwal_anggota.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- ./col -->
@@ -226,26 +226,6 @@ mysqli_close($koneksi);
                         <!-- /.row -->
             </section>
                 
-                <!-- Pengumuman Penting -->
-                <div class="row">
-                    <div class="col-lg-12 mb-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h6 class="font-weight-bold text-info">Pengumuman Penting</h6>
-                            </div>
-                            <div class="card-body">
-                                <!-- Menambahkan Form Input untuk Pengumuman -->
-                                <form>
-                                    <div class="form-group">
-                                        <label for="pengumuman">Pengumuman</label>
-                                        <textarea class="form-control" id="pengumuman" rows="4" placeholder="Masukkan Pengumuman Penting" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-warning btn-sm">Simpan Pengumuman</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
