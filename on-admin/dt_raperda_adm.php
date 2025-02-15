@@ -228,7 +228,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Raperda</th>
+                                                <th>No</th>
                                                 <th>Nomor Raperda</th>
                                                 <th>Tanggal Masuk</th>
                                                 <th>Status Raperda</th>
@@ -240,9 +240,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_raperda']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nomor_raperda']; ?></td>
                                                         <td><?php echo $row['tgl_masuk']; ?></td>
                                                         <td><?php echo $row['status_raperda']; ?></td>
@@ -251,16 +253,13 @@ mysqli_close($koneksi);
                                                         <td><?php echo $row['catatan']; ?></td>
                                                         <td>
                                                             <a href="?edit=<?php echo $row['id_raperda']; ?>">Edit</a> |
-                                                        <td>
-                                                        <a href="laporan_berita_acara.php?id=<?= $row['id_raperda']; ?>" target="_blank">Cetak</a>
-
-                                                        </td>
+                                                            <a href="laporan_berita_acara.php?id=<?= $row['id_raperda']; ?>" target="_blank">Cetak</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php else: ?>
                                                 <tr>
-                                                    <td colspan="7" class="text-center">Tidak ada data Raperda</td>
+                                                    <td colspan="8" class="text-center">Tidak ada data Raperda</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -269,6 +268,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

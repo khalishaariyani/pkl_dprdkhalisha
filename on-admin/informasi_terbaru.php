@@ -46,7 +46,6 @@ if (isset($_GET['edit'])) {
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     $stmt->close();
-    
 }
 
 // Proses untuk update informasi terbaru
@@ -116,17 +115,17 @@ mysqli_close($koneksi);
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="judul">Judul Informasi</label>
-                                    <input type="text" class="form-control" name="judul" value="<?= isset($result) ? $result['judul'] : ''; ?>" required>
+                                    <input type="text" class="form-control" name="judul" value="<?= isset($result) ? htmlspecialchars($result['judul']) : ''; ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi Informasi</label>
-                                    <textarea class="form-control" name="deskripsi" rows="5" required><?= isset($result) ? $result['deskripsi'] : ''; ?></textarea>
+                                    <textarea class="form-control" name="deskripsi" rows="5" required><?= isset($result) ? htmlspecialchars($result['deskripsi']) : ''; ?></textarea>
                                 </div>
                                 <?php if (isset($result)): ?>
                                     <input type="hidden" name="id" value="<?= $result['id']; ?>">
-                                    <button type="submit" name="update_info" class="btn btn-warning">Update Informasi</button>
+                                    <button type="submit" name="update_info" class="btn btn-warning"><i class="fas fa-edit"></i> Update Informasi</button>
                                 <?php else: ?>
-                                    <button type="submit" name="submit_info" class="btn btn-primary">Simpan Informasi</button>
+                                    <button type="submit" name="submit_info" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Informasi</button>
                                 <?php endif; ?>
                             </form>
                         </div>
@@ -156,9 +155,13 @@ mysqli_close($koneksi);
                                                     <td><?php echo htmlspecialchars($row['judul']); ?></td>
                                                     <td><?php echo htmlspecialchars($row['deskripsi']); ?></td>
                                                     <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
-                                                    <td>
-                                                        <a href="?edit=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                        <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-danger btn-sm">Delete</a>
+                                                    <td class="text-center">
+                                                        <a href="?edit=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white" data-toggle="tooltip" data-placement="top" title="Edit Informasi">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-sm btn-danger text-white" data-toggle="tooltip" data-placement="top" title="Hapus Informasi">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -175,6 +178,32 @@ mysqli_close($koneksi);
 
                 </div>
             </section>
+
+            <!-- Tambahkan CSS untuk efek hover -->
+            <style>
+                .btn-warning,
+                .btn-danger {
+                    transition: all 0.3s ease;
+                }
+
+                .btn-warning:hover {
+                    background-color: #d39e00;
+                    transform: scale(1.05);
+                }
+
+                .btn-danger:hover {
+                    background-color: #a71d2a;
+                    transform: scale(1.05);
+                }
+            </style>
+
+            <!-- Tambahkan JavaScript untuk tooltip -->
+            <script>
+                $(document).ready(function() {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            </script>
+
         </div>
     </div>
 

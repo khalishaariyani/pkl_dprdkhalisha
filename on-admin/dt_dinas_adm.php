@@ -37,16 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create'])) {
     $tujuan_dinas = $_POST['tujuan_dinas'];
     $nama_rapat = $_POST['nama_rapat'];
     $tempat_rapat = $_POST['tempat_rapat'];
-    $tgl_rapat = $_POST['tgl_rapat'];
+    $tanggal_rapat = $_POST['tanggal_rapat'];
     $nama_pimpinan = $_POST['nama_pimpinan'];
     $jumlah_peserta = $_POST['jumlah_peserta'];
     $status = $_POST['status'];
 
     // Query untuk memasukkan data ke tabel
-    $sql = "INSERT INTO dinas (id_karyawan, nama_dinas, tujuan_dinas, nama_rapat, tempat_rapat, tgl_rapat, nama_pimpinan, jumlah_peserta, status) 
+    $sql = "INSERT INTO dinas (id_karyawan, nama_dinas, tujuan_dinas, nama_rapat, tempat_rapat, tanggal_rapat, nama_pimpinan, jumlah_peserta, status) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $koneksi->prepare($sql);
-    $stmt->bind_param("ssssssssi", $id_karyawan, $nama_dinas, $tujuan_dinas, $nama_rapat, $tempat_rapat, $tgl_rapat, $nama_pimpinan, $jumlah_peserta, $status);
+    $stmt->bind_param("ssssssssi", $id_karyawan, $nama_dinas, $tujuan_dinas, $nama_rapat, $tempat_rapat, $tanggal_rapat, $nama_pimpinan, $jumlah_peserta, $status);
 
     if ($stmt->execute()) {
         echo "<script>alert('Data Dinas berhasil disimpan.'); window.location.href='dt_dinas_adm.php';</script>";
@@ -72,14 +72,14 @@ if (isset($_GET['edit'])) {
         $tujuan_dinas = $_POST['tujuan_dinas'];
         $nama_rapat = $_POST['nama_rapat'];
         $tempat_rapat = $_POST['tempat_rapat'];
-        $tgl_rapat = $_POST['tgl_rapat'];
+        $tanggal_rapat = $_POST['tanggal_rapat'];
         $nama_pimpinan = $_POST['nama_pimpinan'];
         $jumlah_peserta = $_POST['jumlah_peserta'];
         $status = $_POST['status'];
 
-        $update_sql = "UPDATE dinas SET id_karyawan = ?, nama_dinas = ?, tujuan_dinas = ?, nama_rapat = ?, tempat_rapat = ?, tgl_rapat = ?, nama_pimpinan = ?, jumlah_peserta = ?, status = ? WHERE id_dinas = ?";
+        $update_sql = "UPDATE dinas SET id_karyawan = ?, nama_dinas = ?, tujuan_dinas = ?, nama_rapat = ?, tempat_rapat = ?, tanggal_rapat = ?, nama_pimpinan = ?, jumlah_peserta = ?, status = ? WHERE id_dinas = ?";
         $stmt = $koneksi->prepare($update_sql);
-        $stmt->bind_param("ssssssssi", $id_karyawan, $nama_dinas, $tujuan_dinas, $nama_rapat, $tempat_rapat, $tgl_rapat, $nama_pimpinan, $jumlah_peserta, $status, $id_dinas);
+        $stmt->bind_param("sssssssssi", $id_karyawan, $nama_dinas, $tujuan_dinas, $nama_rapat, $tempat_rapat, $tanggal_rapat, $nama_pimpinan, $jumlah_peserta, $status, $id_dinas);
 
         if ($stmt->execute()) {
             echo "<script>alert('Data Dinas berhasil diperbarui.'); window.location.href='dt_dinas_adm.php';</script>";
@@ -203,8 +203,8 @@ mysqli_close($koneksi);
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="tgl_rapat">Tanggal Rapat</label>
-                                            <input type="date" class="form-control" name="tgl_rapat" value="<?= isset($result) ? $result['tgl_rapat'] : ''; ?>" required>
+                                            <label for="tanggal_rapat">Tanggal Rapat</label>
+                                            <input type="date" class="form-control" name="tanggal_rapat" value="<?= isset($result) ? $result['tanggal_rapat'] : ''; ?>" required>
                                         </div>
                                     </div>
 
@@ -224,7 +224,7 @@ mysqli_close($koneksi);
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="status">Status</label>
+                                            <label for="status">Tugas Dinas</label>
                                             <input type="text" class="form-control" name="status" value="<?= isset($result) ? $result['status'] : ''; ?>" required>
                                         </div>
                                     </div>
@@ -254,8 +254,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Dinas</th>
-                                                <th>ID Karyawan</th>
+                                                <th>No</th>
                                                 <th>Nama Dinas</th>
                                                 <th>Tujuan Dinas</th>
                                                 <th>Nama Rapat</th>
@@ -263,16 +262,17 @@ mysqli_close($koneksi);
                                                 <th>Tanggal Rapat</th>
                                                 <th>Nama Pimpinan</th>
                                                 <th>Jumlah Peserta</th>
-                                                <th>Status</th>
+                                                <th>Tugas Dinas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_dinas']; ?></td>
-                                                        <td><?php echo $row['id_karyawan']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nama_dinas']; ?></td>
                                                         <td><?php echo $row['tujuan_dinas']; ?></td>
                                                         <td><?php echo $row['nama_rapat']; ?></td>
@@ -289,7 +289,7 @@ mysqli_close($koneksi);
                                                 <?php endforeach; ?>
                                             <?php else: ?>
                                                 <tr>
-                                                    <td colspan="11" class="text-center">Tidak ada data Dinas</td>
+                                                    <td colspan="10" class="text-center">Tidak ada data Dinas</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -298,6 +298,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

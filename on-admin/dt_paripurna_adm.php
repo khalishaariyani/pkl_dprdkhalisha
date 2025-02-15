@@ -214,13 +214,13 @@ mysqli_close($koneksi);
                             </div>
 
                             <div class="m-4 text-center">
-                            <?php if (isset($_GET['edit'])): ?>
-            <!-- Menampilkan tombol Update hanya jika dalam mode edit -->
-            <button type="submit" name="update" class="btn btn-warning">Update Raperda</button>
-        <?php else: ?>
-            <!-- Menampilkan tombol Simpan hanya jika dalam mode tambah data -->
-            <button type="submit" name="create" class="btn btn-primary">Simpan Raperda</button>
-        <?php endif; ?>
+                                <?php if (isset($_GET['edit'])): ?>
+                                    <!-- Menampilkan tombol Update hanya jika dalam mode edit -->
+                                    <button type="submit" name="update" class="btn btn-warning">Update Raperda</button>
+                                <?php else: ?>
+                                    <!-- Menampilkan tombol Simpan hanya jika dalam mode tambah data -->
+                                    <button type="submit" name="create" class="btn btn-primary">Simpan Raperda</button>
+                                <?php endif; ?>
 
                             </div>
                         </form>
@@ -237,7 +237,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Jadwal</th>
+                                                <th>No</th>
                                                 <th>Nomor Agenda</th>
                                                 <th>Judul Raperda</th>
                                                 <th>Tanggal Waktu</th>
@@ -250,9 +250,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_jadwal']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nomor_agenda']; ?></td>
                                                         <td><?php echo $row['judul_paripurna']; ?></td>
                                                         <td><?php echo $row['tgl_waktu']; ?></td>
@@ -277,6 +279,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

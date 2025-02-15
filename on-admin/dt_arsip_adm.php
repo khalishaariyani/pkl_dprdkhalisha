@@ -237,7 +237,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Arsip</th>
+                                                <th>No</th>
                                                 <th>No Dokumen</th>
                                                 <th>Jenis Dokumen</th>
                                                 <th>Tanggal Arsip</th>
@@ -248,9 +248,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_arsip']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['no_dokumen']; ?></td>
                                                         <td><?php echo $row['jenis_dokumen']; ?></td>
                                                         <td><?php echo $row['tgl_arsip']; ?></td>
@@ -273,6 +275,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

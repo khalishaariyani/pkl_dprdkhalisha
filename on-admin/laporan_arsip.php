@@ -114,10 +114,30 @@ mysqli_close($koneksi);
                                     <h6 class="m-1 font-weight-bold text-info">Data Arsip</h6>
                                 </div>
                                 <div class="card-body">
+                                <div class="row">
+                                        <div class="col-md-12">
+                                            <form method="POST" action="cetak_arsip.php" target="_blank">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <label for="bulan">Pilih Bulan:</label>
+                                                        <input type="month" class="form-control mb-2" name="bulan" required>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <label>&nbsp;</label>
+                                                        <a href="cetak_arsip.php" class="btn btn-primary btn-block mb-2" target="_blank">
+                                                            <i class="fas fa-print"></i> Cetak Laporan
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Arsip</th>
+                                                <th>NO</th> <!-- Mengganti ID Arsip dengan NO -->
                                                 <th>No Dokumen</th>
                                                 <th>Jenis Dokumen</th>
                                                 <th>Tanggal Arsip</th>
@@ -127,9 +147,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Variabel untuk nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_arsip']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['no_dokumen']; ?></td>
                                                         <td><?php echo $row['jenis_dokumen']; ?></td>
                                                         <td><?php echo $row['tgl_arsip']; ?></td>
@@ -144,6 +166,7 @@ mysqli_close($koneksi);
                                             <?php endif; ?>
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>

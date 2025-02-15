@@ -99,13 +99,6 @@ mysqli_close($koneksi);
                     <?php endif; ?>
                 </div>
             </section>
-
-            <!-- Tombol Kembali -->
-            <div class="row">
-                <div class="col-12 text-center">
-                    <a href="br_member.php" class="btn btn-primary">Kembali ke Halaman</a>
-                </div>
-            </div>
         </div>
     </div>
 

@@ -74,6 +74,7 @@ mysqli_close($koneksi);
                 </div>
             </div>
 
+
             <!-- Laporan Kehadiran Form -->
             <section class="content">
                 <div class="container-fluid">
@@ -114,10 +115,31 @@ mysqli_close($koneksi);
                                     <h6 class="m-1 font-weight-bold text-info">Data Kehadiran</h6>
                                 </div>
                                 <div class="card-body">
+                                    <!-- Form Filter dan Cetak -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form method="POST" action="cetak_kehadiran.php" target="_blank">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <label for="bulan">Pilih Bulan:</label>
+                                                        <input type="month" class="form-control mb-2" name="bulan" required>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <label>&nbsp;</label>
+                                                        <a href="cetak_kehadiran.php" class="btn btn-primary btn-block mb-2" target="_blank">
+                                                            <i class="fas fa-print"></i> Cetak Laporan
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Kehadiran</th>
+                                                <th>NO</th>
                                                 <th>Nama Anggota</th>
                                                 <th>No Anggota</th>
                                                 <th>Status Kehadiran</th>
@@ -127,9 +149,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Variabel untuk nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_kehadiran']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nama']; ?></td>
                                                         <td><?php echo $row['no_anggota']; ?></td>
                                                         <td><?php echo $row['status_kehadiran']; ?></td>
@@ -147,6 +171,7 @@ mysqli_close($koneksi);
                                             <?php endif; ?>
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>

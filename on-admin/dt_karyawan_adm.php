@@ -204,7 +204,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Karyawan</th>
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Jabatan</th>
                                                 <th>Departemen</th>
@@ -216,9 +216,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_karyawan']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nama']; ?></td>
                                                         <td><?php echo $row['jabatan']; ?></td>
                                                         <td><?php echo $row['departemen']; ?></td>
@@ -242,6 +244,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

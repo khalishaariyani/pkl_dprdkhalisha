@@ -68,168 +68,141 @@ mysqli_close($koneksi);
             </div>
             <!-- /.content-header -->
             <div class="container-fluid">
-                
+
                 <!-- Welcome Message -->
                 <section class="content">
-                <div class="card">
-                    <div class="card-header">INROMASI TERKINI</div>
+                    <div class="card shadow-lg">
+                        <div class="card-header text-white text-center" style="background-color: #002147;">
+                            <h4 class="font-weight-bold">INFORMASI TERKINI</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <!-- Jadwal Rapat -->
+                                    <div class="col-lg-4 col-md-6 mb-3">
+                                        <div class="small-box" style="background: linear-gradient(to right, #56CCF2, #2F80ED); color: white; border-radius: 10px; padding: 20px;">
+                                            <h5 class="font-weight-bold">JADWAL RAPAT DPRD</h5>
+                                            <div class="text-right">
+                                                <i class="fas fa-calendar-alt fa-3x"></i>
+                                            </div>
+                                            <a href="jadwal_anggota.php" class="small-box-footer text-white font-weight-bold">
+                                                More info <i class="fas fa-arrow-circle-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
 
-                    <div class="card-body">
-                        <div class="container-fluid p-2">
+                                    <!-- Badan Pembentukan Perda -->
+                                    <div class="col-lg-4 col-md-6 mb-3">
+                                        <div class="small-box" style="background: linear-gradient(to right, #FDC830, #F37335); color: white; border-radius: 10px; padding: 20px;">
+                                            <h5 class="font-weight-bold">BADAN PEMBENTUKAN PERDA</h5>
+                                            <div class="text-right">
+                                                <i class="fas fa-balance-scale fa-3x"></i>
+                                            </div>
+                                            <a href="bapemperda.php" class="small-box-footer text-white font-weight-bold">
+                                                More info <i class="fas fa-arrow-circle-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
 
-                            <!-- Small boxes (Stat box) -->
-                            <div class="row">
-                                <div class="col-lg-3 col-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-info">
-                                        <div class="inner">
-                                            <h3></h3>
-                                            <p> JADWAL RAPAT DPRD KOTA BANJARMASIN </p>
+                                    <!-- Dewan DPRD -->
+                                    <div class="col-lg-4 col-md-12 mb-3">
+                                        <div class="small-box" style="background: linear-gradient(to right, #FF416C, #FF4B2B); color: white; border-radius: 10px; padding: 20px;">
+                                            <h5 class="font-weight-bold">DEWAN DPRD PERIODE 2024-2029</h5>
+                                            <div class="text-right">
+                                                <i class="fas fa-users fa-3x"></i>
+                                            </div>
+                                            <a href="dewan_dprd.php" class="small-box-footer text-white font-weight-bold">
+                                                More info <i class="fas fa-arrow-circle-right"></i>
+                                            </a>
                                         </div>
-                                        <div class="icon">
-                                            <i class="ion ion-bag"></i>
-                                        </div>
-                                        <a href="jadwal_anggota.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
-                                <!-- ./col -->
-                                <div class="col-lg-3 col-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-success">
-                                        <div class="inner">
-                                            <h3></h3>
-                                            <p> STATUS RANCANGAN RAPERDA DPRD KOTA BANJARMASIN </p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="ion ion-stats-bars"></i>
-                                        </div>
-                                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                                <!-- ./col -->
-                                <div class="col-lg-3 col-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-warning">
-                                        <div class="inner">
-                                            <h3></h3>
-                                            <p> Badan Pembentukan Peraturan Daerah ( Periode 2024- 2029)</p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="ion ion-person-add"></i>
-                                        </div>
-                                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                                <!-- ./col -->
-                                <div class="col-lg-3 col-6">
-                                    <!-- small box -->
-                                    <div class="small-box bg-danger">
-                                        <div class="inner">
-                                            <h3></h3>
-                                            <p> DEWAN DPRD KOTA BANJARMASIN PERIPDE 2024-2029</p>
-                                        </div>
-                                        <div class="icon">
-                                            <i class="ion ion-pie-graph"></i>
-                                        </div>
-                                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                    </div>
-                                </div>
-                                <!-- ./col -->
                             </div>
                         </div>
-                        <!-- /.card -->
-                        <div class="row">
+                    </div>
+                </section>
 
-                            <!--Laporan Statistik-->
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Tentang DPRD Kota Banjarmasin</h5>
-                                        <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                                                    <i class="fas fa-wrench"></i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                                    <a href="#" class="dropdown-item">Action</a>
-                                                    <a href="#" class="dropdown-item">Another action</a>
-                                                    <a href="#" class="dropdown-item">Something else here</a>
-                                                    <a class="dropdown-divider"></a>
-                                                    <a href="#" class="dropdown-item">Separated link</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <img src="../dist/img/ketua.jpeg" alt="Rikval Fachruri" class="img-fluid rounded-circle" style="width: 100%; height: auto;">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <p class="text-center">
-                                                    <strong>Rikval Fachruri</strong><br>
-                                                    <small>Ketua DPRD Kota Banjarmasin</small>
-                                                </p>
-                                                <p>
-                                                    Dewan Perwakilan Rakyat Daerah (DPRD) Kota Banjarmasin adalah lembaga legislatif di tingkat kota
-                                                    yang memiliki fungsi utama sebagai perwakilan rakyat dalam menyuarakan aspirasi masyarakat serta
-                                                    mengawasi jalannya pemerintahan di Kota Banjarmasin, Kalimantan Selatan. DPRD Kota Banjarmasin
-                                                    juga berperan dalam pembentukan peraturan daerah (Perda) dan penganggaran daerah melalui fungsi
-                                                    legislasi, anggaran, dan pengawasan.
-                                                </p>
-
-                                                <h5>Fungsi DPRD Kota Banjarmasin</h5>
-                                                <ul>
-                                                    <li><strong>Fungsi Legislasi:</strong> DPRD memiliki wewenang untuk membahas dan menetapkan peraturan daerah (Perda) bersama dengan pemerintah kota. Perda ini mencakup berbagai aspek, seperti tata kelola kota, anggaran, pembangunan, dan kebijakan-kebijakan lain yang menyangkut kesejahteraan masyarakat.</li>
-                                                    <li><strong>Fungsi Anggaran:</strong> DPRD terlibat dalam pembahasan dan penetapan Anggaran Pendapatan dan Belanja Daerah (APBD). DPRD bertanggung jawab memastikan anggaran tersebut dialokasikan sesuai dengan dengan prioritas pembangunan di Kota Banjarmasin.</li>
-                                                    <li><strong>Fungsi Pengawasan:</strong> DPRD juga bertanggung jawab dalam mengawasi jalannya pemerintahan, termasuk pelaksanaan kebijakan-kebijakan yang telah disepakati, pengelolaan keuangan daerah, dan penggunaan APBD. Pengawasan ini bertujuan untuk memastikan transparansi dan akuntabilitas pemerintah kota dalam melaksanakan tugas-tugasnya.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- ./card-body -->
-                                    <div class="card-footer">
-                                        <div class="row">
-                                            <!-- Gambar untuk individu pertama -->
-                                            <div class="col-sm-4 col-6 text-center">
-                                                <img src="../dist/img/wakil1.png" alt="H. Harry Wijaya" class="img-fluid rounded-circle" style="width: 180px; height: 180px; object-fit: cover;">
-                                                <h6 class="mt-2">H. Harry Wijaya, S.H.</h6>
-                                                <p>Wakil Ketua DPRD</p>
-                                            </div>
-
-                                            <!-- Gambar untuk individu kedua -->
-                                            <div class="col-sm-4 col-6 text-center">
-                                                <img src="../dist/img/wakil2.png" alt="H. Mathari" class="img-fluid rounded-circle" style="width: 180px; height: 180px; object-fit: cover;">
-                                                <h6 class="mt-2">H. Mathari, S.Ag., M.I.Kom.</h6>
-                                                <p>Wakil Ketua DPRD</p>
-                                            </div>
-
-                                            <!-- Gambar untuk individu ketiga -->
-                                            <div class="col-sm-4 col-6 text-center">
-                                                <img src="../dist/img/wakil3.png" alt="Muhammad Isnaini" class="img-fluid rounded-circle" style="width: 180px; height: 180px; object-fit: cover;">
-                                                <h6 class="mt-2">Muhammad Isnaini, S.E., M.M.</h6>
-                                                <p>Wakil Ketua DPRD</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- /.card-footer -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col -->
+                <!-- Tentang DPRD Kota Banjarmasin -->
+                <div class="container mt-4">
+                    <h3 class="text-center font-weight-bold text-primary mb-4">Tentang DPRD Kota Banjarmasin</h3>
+                    <p class="text-justify">
+                        Dewan Perwakilan Rakyat Daerah (DPRD) Kota Banjarmasin adalah lembaga legislatif yang berperan penting dalam pengambilan keputusan terkait kebijakan daerah. DPRD bertugas untuk menyusun, mengawasi, dan menetapkan Peraturan Daerah (Perda) yang bertujuan meningkatkan kesejahteraan masyarakat serta memastikan transparansi dalam pemerintahan.
+                    </p>
+                    <div class="row">
+                        <!-- Ketua DPRD -->
+                        <div class="col-md-3 text-center">
+                            <img src="../dist/img/ketua.jpeg" alt="Rikval Fachruri" class="profile-img mb-3">
+                            <h5 class="font-weight-bold">Rikval Fachruri</h5>
+                            <p class="text-muted"><em>Ketua DPRD Kota Banjarmasin</em></p>
                         </div>
-                        <!-- /.row -->
-            </section>
-                
+
+                        <!-- Wakil Ketua DPRD -->
+                        <div class="col-md-3 text-center">
+                            <img src="../dist/img/wakil1.png" alt="H. Harry Wijaya" class="profile-img mb-3">
+                            <h5 class="font-weight-bold">H. Harry Wijaya, S.H.</h5>
+                            <p class="text-muted"><em>Wakil Ketua DPRD</em></p>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <img src="../dist/img/wakil2.png" alt="H. Mathari" class="profile-img mb-3">
+                            <h5 class="font-weight-bold">H. Mathari, S.Ag., M.I.Kom.</h5>
+                            <p class="text-muted"><em>Wakil Ketua DPRD</em></p>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <img src="../dist/img/wakil3.png" alt="Muhammad Isnaini" class="profile-img mb-3">
+                            <h5 class="font-weight-bold">Muhammad Isnaini, S.E., M.M.</h5>
+                            <p class="text-muted"><em>Wakil Ketua DPRD</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <style>
+                    .profile-img {
+                        width: 180px;
+                        height: 180px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 4px solid #fff;
+                        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+
+                    .profile-img:hover {
+                        transform: scale(1.1);
+                        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+                    }
+
+                    .small-box {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 20px;
+                        border-radius: 10px;
+                        color: white;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .small-box-footer {
+                        display: block;
+                        margin-top: 10px;
+                        font-size: 14px;
+                        text-decoration: none;
+                    }
+                </style>
+
+
+
+
             </div>
+            </section>
 
 
         </div>
+
+
+    </div>
     </div>
     <!-- /.row (main row) -->
     </div>

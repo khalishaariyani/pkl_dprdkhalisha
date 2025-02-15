@@ -209,7 +209,7 @@ mysqli_close($koneksi);
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Nomor</th>
+                                                <th>No</th>
                                                 <th>Nama Anggota</th>
                                                 <th>No Anggota</th>
                                                 <th>Status Kehadiran</th>
@@ -219,14 +219,15 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Inisialisasi nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_kehadiran']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nama']; ?></td>
                                                         <td><?php echo $row['no_anggota']; ?></td>
                                                         <td><?php echo $row['status_kehadiran']; ?></td>
                                                         <td><?php echo $row['tgl_kehadiran']; ?></td>
-
                                                         <td>
                                                             <a href="?edit=<?php echo $row['id_kehadiran']; ?>">Edit</a> |
                                                             <a href="?delete=<?php echo $row['id_kehadiran']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
@@ -235,7 +236,7 @@ mysqli_close($koneksi);
                                                 <?php endforeach; ?>
                                             <?php else: ?>
                                                 <tr>
-                                                    <td colspan="5" class="text-center">Tidak ada data Kehadiran</td>
+                                                    <td colspan="6" class="text-center">Tidak ada data Kehadiran</td>
                                                 </tr>
                                             <?php endif; ?>
                                         </tbody>
@@ -244,6 +245,7 @@ mysqli_close($koneksi);
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>

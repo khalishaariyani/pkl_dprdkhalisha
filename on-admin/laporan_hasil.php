@@ -114,44 +114,63 @@ mysqli_close($koneksi);
                                     <h6 class="m-1 font-weight-bold text-info">Data Anggota Dinas</h6>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>ID Dinas</th>
-                                                <th>ID Karyawan</th>
-                                                <th>Nama Dinas</th>
-                                                <th>Tujuan Dinas</th>
-                                                <th>Nama Rapat</th>
-                                                <th>Tempat Rapat</th>
-                                                <th>Tanggal Rapat</th>
-                                                <th>Nama Pimpinan</th>
-                                                <th>Jumlah Peserta</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php if (!empty($results)): ?>
-                                                <?php foreach ($results as $row): ?>
-                                                    <tr>
-                                                        <td><?php echo $row['id_dinas']; ?></td>
-                                                        <td><?php echo $row['id_karyawan']; ?></td>
-                                                        <td><?php echo $row['nama_dinas']; ?></td>
-                                                        <td><?php echo $row['tujuan_dinas']; ?></td>
-                                                        <td><?php echo $row['nama_rapat']; ?></td>
-                                                        <td><?php echo $row['tempat_rapat']; ?></td>
-                                                        <td><?php echo $row['tanggal_rapat']; ?></td>
-                                                        <td><?php echo $row['nama_pimpinan']; ?></td>
-                                                        <td><?php echo $row['jumlah_peserta']; ?></td>
-                                                        <td><?php echo $row['status']; ?></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            <?php else: ?>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form method="POST" action="cetak_anggota.php" target="_blank">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <label for="bulan">Pilih Bulan:</label>
+                                                        <input type="month" class="form-control mb-2" name="bulan" required>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <label>&nbsp;</label>
+                                                        <a href="cetak_anggota.php" class="btn btn-primary btn-block mb-2" target="_blank">
+                                                            <i class="fas fa-print"></i> Cetak Laporan
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                        <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>NO</th> <!-- Mengganti ID Dinas dengan NO -->
+                                            <th>Nama Dinas</th>
+                                            <th>Tujuan Dinas</th>
+                                            <th>Nama Rapat</th>
+                                            <th>Tempat Rapat</th>
+                                            <th>Tanggal Rapat</th>
+                                            <th>Nama Pimpinan</th>
+                                            <th>Jumlah Peserta</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if (!empty($results)): ?>
+                                            <?php $no = 1; // Variabel untuk nomor urut 
+                                            ?>
+                                            <?php foreach ($results as $row): ?>
                                                 <tr>
-                                                    <td colspan="10" class="text-center">Tidak ada data Anggota Dinas</td>
+                                                    <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
+                                                    <td><?php echo $row['nama_dinas']; ?></td>
+                                                    <td><?php echo $row['tujuan_dinas']; ?></td>
+                                                    <td><?php echo $row['nama_rapat']; ?></td>
+                                                    <td><?php echo $row['tempat_rapat']; ?></td>
+                                                    <td><?php echo $row['tanggal_rapat']; ?></td>
+                                                    <td><?php echo $row['nama_pimpinan']; ?></td>
+                                                    <td><?php echo $row['jumlah_peserta']; ?></td>
+                                                    <td><?php echo $row['status']; ?></td>
                                                 </tr>
-                                            <?php endif; ?>
-                                        </tbody>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <tr>
+                                                <td colspan="10" class="text-center">Tidak ada data Anggota Dinas</td>
+                                            </tr>
+                                        <?php endif; ?>
+                                    </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>

@@ -114,10 +114,30 @@ mysqli_close($koneksi);
                                     <h6 class="m-1 font-weight-bold text-info">Data Jadwal Rapat</h6>
                                 </div>
                                 <div class="card-body">
+                                <div class="row">
+                                        <div class="col-md-12">
+                                            <form method="POST" action="cetak_jadwal.php" target="_blank">
+                                                <div class="form-row align-items-center">
+                                                    <div class="col-auto">
+                                                        <label for="bulan">Pilih Bulan:</label>
+                                                        <input type="month" class="form-control mb-2" name="bulan" required>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <label>&nbsp;</label>
+                                                        <a href="cetak_jadwal.php" class="btn btn-primary btn-block mb-2" target="_blank">
+                                                            <i class="fas fa-print"></i> Cetak Laporan
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>ID Jadwal</th>
+                                                <th>NO</th> <!-- Mengganti ID Jadwal menjadi NO -->
                                                 <th>Nomor Agenda</th>
                                                 <th>Judul Rapat</th>
                                                 <th>Tanggal & Waktu</th>
@@ -129,9 +149,11 @@ mysqli_close($koneksi);
                                         </thead>
                                         <tbody>
                                             <?php if (!empty($results)): ?>
+                                                <?php $no = 1; // Variabel untuk nomor urut 
+                                                ?>
                                                 <?php foreach ($results as $row): ?>
                                                     <tr>
-                                                        <td><?php echo $row['id_jadwal']; ?></td>
+                                                        <td><?php echo $no++; ?></td> <!-- Nomor urut otomatis -->
                                                         <td><?php echo $row['nomor_agenda']; ?></td>
                                                         <td><?php echo $row['judul_paripurna']; ?></td>
                                                         <td><?php echo $row['tgl_waktu']; ?></td>
@@ -148,6 +170,7 @@ mysqli_close($koneksi);
                                             <?php endif; ?>
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>

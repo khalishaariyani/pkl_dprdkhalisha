@@ -60,7 +60,7 @@ mysqli_close($koneksi);
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                    
+
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
@@ -79,118 +79,134 @@ mysqli_close($koneksi);
 
             <!-- Main content -->
             <section class="content">
-    <div class="card">
-        <div class="card-header">
-            <h4>INFORMASI TERKINI</h4>
-        </div>
+                <section class="content">
+                    <div class="card shadow-lg border-0 rounded-lg">
+                        <!-- HEADER DENGAN ANIMASI DAN TAMPILAN MEWAH -->
+                        <div class="card-header marquee-header">
+                            <marquee behavior="scroll" direction="left" scrollamount="6">
+                                <h2 class="text-white font-weight-bold">
+                                    SELAMAT DATANG DI WEBSITE MANAJEMEN RAPERDA DEWAN PERWAKILAN RAKYAT DAERAH KOTA BANJARMASIN
+                                </h2>
+                            </marquee>
+                        </div>
 
-        <div class="card-body">
-            <div class="container-fluid p-3">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                    <!-- Baris 1: Agenda Rapat Raperda dan Status Kehadiran -->
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="small-box bg-info shadow-lg rounded-lg">
-                            <div class="inner">
-                                <h3>5</h3>
-                                <p>Agenda Rapat Raperda di DPRD Kota Banjarmasin</p>
+                        <div class="card-body">
+                            <div class="container-fluid p-3">
+                                <!-- Row 1: Agenda Rapat & Status Kehadiran -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="info-box gradient-gold">
+                                            <div class="inner">
+                                                <p class="text-title">Agenda Rapat Raperda di DPRD Kota Banjarmasin</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-calendar-check fa-3x"></i>
+                                            </div>
+                                            <a href="agenda.php" class="info-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="info-box gradient-blue">
+                                            <div class="inner">
+                                                <p class="text-title">Status Kehadiran Anggota</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-users fa-3x"></i>
+                                            </div>
+                                            <a href="kehadiran.php" class="info-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Keputusan Rapat & Pengumuman -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="info-box gradient-black">
+                                            <div class="inner">
+                                                <p class="text-title">Keputusan Hasil Rapat Raperda</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-gavel fa-3x"></i>
+                                            </div>
+                                            <a href="cetak_keputusan.php" class="info-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="info-box gradient-red">
+                                            <div class="inner">
+                                                <p class="text-title">Pengumuman Penting</p>
+                                            </div>
+                                            <div class="icon">
+                                                <i class="fas fa-bell fa-3x"></i>
+                                            </div>
+                                            <a href="pengumuman_penting.php" class="info-footer">Lihat Pengumuman <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                </section>
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="small-box bg-success shadow-lg rounded-lg">
-                            <div class="inner">
-                                <h3>85%</h3>
-                                <p>Status Kehadiran Anggota</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <!-- CSS Custom -->
+                <style>
+                    .marquee-header {
+                        background: linear-gradient(to right, #003366, #00509e);
+                        padding: 20px 0;
+                        border-radius: 10px 10px 0 0;
+                    }
 
-                <!-- Baris 2: Keputusan Hasil Rapat dan Pengumuman Penting -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="small-box bg-warning shadow-lg rounded-lg">
-                            <div class="inner">
-                                <h3>2</h3>
-                                <p>Keputusan Hasil Rapat Raperda</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
+                    .marquee-header h2 {
+                        font-size: 24px;
+                        margin: 0;
+                    }
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                        <div class="small-box bg-danger shadow-lg rounded-lg">
-                            <div class="inner">
-                                <h3>!</h3>
-                                <p>Pengumuman Penting</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-bell"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">Lihat Pengumuman <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    .info-box {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 25px;
+                        border-radius: 10px;
+                        color: white;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                    }
 
-            </div>
-        </div>
-    </div>
+                    .text-title {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
 
-    <!-- Additional Information Section -->
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-lg rounded-lg">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="m-0">Statistik Kehadiran </h5>
-                </div>
-                <div class="card-body">
-                    <p>Data statistik kehadiran anggota rapat  Grafik akan menunjukkan tren kehadiran berdasarkan waktu dan kategori.</p>
-                    <!-- Include a small chart or graph here -->
-                    <a href="#" class="btn btn-light">Lihat Statistik</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-lg rounded-lg">
-                <div class="card-header bg-info text-white">
-                    <h5 class="m-0">Agenda Rapat </h5>
-                </div>
-                <div class="card-body">
-                    <p>Daftar agenda rapat DPRD Kota Banjarmasin Anggota dapat mempersiapkan diri dengan melihat detail setiap rapat yang terjadwal.</p>
-                    <a href="#" class="btn btn-light">Lihat Agenda</a>
-                </div>
-            </div>
-        </div>
+                    .info-footer {
+                        font-size: 16px;
+                        color: white;
+                        text-decoration: none;
+                    }
 
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card shadow-lg rounded-lg">
-                <div class="card-header bg-warning text-white">
-                    <h5 class="m-0">Keputusan Terbaru</h5>
-                </div>
-                <div class="card-body">
-                    <p>Tampilkan keputusan terbaru yang dihasilkan dari rapat DPRD untuk disebarkan kepada anggota dan dinas dinas terkait</p>
-                    <a href="#" class="btn btn-light">Lihat Keputusan</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                    .gradient-gold {
+                        background: linear-gradient(135deg, #f0c75e, #d4a417);
+                    }
 
-            <!-- right col -->
+                    .gradient-blue {
+                        background: linear-gradient(135deg, #007bff, #0056b3);
+                    }
+
+                    .gradient-black {
+                        background: linear-gradient(135deg, #343a40, #212529);
+                    }
+
+                    .gradient-red {
+                        background: linear-gradient(135deg, #e74c3c, #c0392b);
+                    }
+                </style>
+
+
+
+
+
+
+                <!-- right col -->
         </div>
         <!-- /.row (main row) -->
     </div>
